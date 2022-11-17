@@ -1,6 +1,6 @@
 ﻿namespace PRG281_Project_Group11
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
