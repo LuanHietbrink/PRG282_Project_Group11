@@ -110,6 +110,45 @@ namespace PRG281_Project_Group11
             }
         }
 
+        public bool searchMethod(int id)
+        {
+            string searcQuery = ($"SELECT*FROM ModuleDetails WHERE ModuleCode = {id}");
+            openConnection();
+            cmd = new SqlCommand(searcQuery, conn);
+
+            try
+            {
+                reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    MessageBox.Show($"The Record for {id} was found");
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show($"The Record for {id} was not found");
+                    return false;
+                }
+
+            }
+            catch (SqlException err)
+            {
+
+                MessageBox.Show(err.Message);
+            }
+            finally
+            {
+
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+
+                reader.Close();
+            }
+            return false;
+        }
 
     }
 }

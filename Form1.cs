@@ -83,5 +83,243 @@ namespace PRG281_Project_Group11
 
 
         }
+
+        private void btnModuleFind_Click(object sender, EventArgs e)
+        {
+            if (txtModCodeFind.Text != "")
+            {
+                bool found = moduleDataHandler.searchMethod(int.Parse(txtModCodeFind.Text));
+
+                if (found)
+                {
+                    btnDelete.Enabled = true;
+                    btnUpdate.Enabled = true;
+                    string searcQuery = ($"SELECT*FROM ModuleDetails WHERE ModuleCode = {txtModCodeFind.Text}");
+                    connection.Open();
+                    command = new SqlCommand(searcQuery, connection);
+
+                    try
+                    {
+                        reader = command.ExecuteReader();
+
+                        if (reader.Read())
+                        {
+                            txtModNameFind.Text = reader[1].ToString();
+                            txtModDescFind.Text = reader[2].ToString();
+                            txtModLinkFind.Text = reader[3].ToString();
+                        }
+                        
+
+                    }
+                    catch (SqlException err)
+                    {
+
+                        MessageBox.Show(err.Message);
+                    }
+                    finally
+                    {
+
+                        if (connection != null)
+                        {
+                            connection.Close();
+                        }
+
+                        reader.Close();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a module code");
+            }
+        }
+
+        private void txtModCodeFind_TextChanged(object sender, EventArgs e)
+        {
+            double parsedValue;
+
+            if (!double.TryParse(txtModCodeFind.Text, out parsedValue))
+            {
+                txtModCodeFind.Text = "";
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            moduleDataHandler.deleteModule(int.Parse(txtModCodeFind.Text));
+            clearEditFields();
+        }
+
+        public void clearEditFields()
+        {
+            txtModCodeFind.Clear();
+            txtModDescFind.Clear();
+            txtModLinkFind.Clear();
+            txtModNameFind.Clear();
+
+            btnDelete.Enabled = false;
+            btnUpdate.Enabled = false;
+        }
+
+
+        private void btnViewModules_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                connection.Open();
+                command = new SqlCommand("select*from ModuleDetails", connection);
+
+                reader = command.ExecuteReader();
+
+                BindingSource source = new BindingSource();
+                source.DataSource = reader;
+
+                dtModules.DataSource = source;
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.ToString());
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+
+            }
+        }
+
+        private void btnAddForStudent_Click(object sender, EventArgs e)
+        {
+            addStudentModule(int.Parse(txtStudentModule.Text), int.Parse(txtModuleAdd.Text));
+            try
+            {
+                connection.Open();
+                command = new SqlCommand($"select StudentNumber, ModuleDetails.ModuleCode, ModuleName, ModuleDescription from ModuleDetails Join StudentModules on ModuleDetails.ModuleCode = StudentModules.Modulecode where StudentNumber = {txtStudentModule.Text}", connection);
+
+                reader = command.ExecuteReader();
+
+                BindingSource source = new BindingSource();
+                source.DataSource = reader;
+
+                dtModules.DataSource = source;
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.ToString());
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+
+            }
+            txtStudentModule.Clear();
+            txtModuleAdd.Clear();
+        }
+
+        public void addStudentModule(int student, int module)
+        {
+            bool modulefound = moduleDataHandler.searchMethod(module);
+
+            bool searchStudent = false;
+
+            string searcQuery = ($"SELECT*FROM StudentDetails WHERE StudentNumber = {student}");
+            connection.Open();
+            command = new SqlCommand(searcQuery, connection);
+
+            try
+            {
+                reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+
+                    searchStudent = true;
+                }
+                else
+                {
+                    searchStudent = false;
+                }
+
+            }
+            catch (SqlException err)
+            {
+
+                MessageBox.Show(err.Message);
+            }
+            finally
+            {
+
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+
+                reader.Close();
+            }
+
+
+            if (modulefound == true && searchStudent == true)
+            {
+                string searchQuery = ($"SELECT*FROM StudentModules WHERE StudentNumber = {student} and ModuleCode = {module}");
+                connection.Open();
+                command = new SqlCommand(searchQuery, connection);
+
+                try
+                {
+                    reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        MessageBox.Show("This student already has this module");
+                    }
+                    else
+                    {
+                        reader.Close();
+                        string insertQuery = ($"Insert into StudentModules (StudentNumber, ModuleCode) Values ({student},{module}) ");
+                        SqlCommand addsm = new SqlCommand(insertQuery, connection);
+                        try
+                        {
+                            addsm.ExecuteNonQuery();
+                            MessageBox.Show("Module successfully added");
+                        }
+                        catch (SqlException err)
+                        {
+                            MessageBox.Show("Something went wrong. Please try again");
+                            MessageBox.Show(err.ToString());
+                        }
+                        finally
+                        {
+                            connection.Close();
+                        }
+                    }
+
+                }
+                catch (SqlException err)
+                {
+
+                    MessageBox.Show(err.Message);
+                }
+                finally
+                {
+
+                    if (connection != null)
+                    {
+                        connection.Close();
+                    }
+
+                    reader.Close();
+                }
+            }
+        }
     }
 }
