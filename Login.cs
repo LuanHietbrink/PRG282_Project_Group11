@@ -23,7 +23,8 @@ namespace PRG281_Project_Group11
 
             string Username;
             string Password;
-            string filePath = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "login.txt");
+            string filePath = Directory.GetCurrentDirectory();
+            filePath += @"..\..\..\Login\login.txt";
 
             Username = txtUsername.Text;
             Password = txtPassword.Text;

@@ -22,7 +22,8 @@ namespace PRG281_Project_Group11
         private void btnAdduser_Click(object sender, EventArgs e)
         {
             string username, password;
-            string filepath = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "login.txt");
+            string filepath = Directory.GetCurrentDirectory();
+            filepath += @"..\..\..\Login\login.txt";
 
             username = txtUsername.Text;
             password = txtPassword.Text;
