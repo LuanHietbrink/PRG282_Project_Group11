@@ -66,6 +66,12 @@ namespace PRG281_Project_Group11
             else
             {
                 StudentDataH.AddStudent(StudentName, StudentSurname, StudentImage, StudentDOB, StudentGender, StudentPhone, StudentAddress);
+
+                txtStuName.Clear();
+                txtStuSurname.Clear();
+                cbxStuGender.ResetText();
+                txtStuPhone.Clear();
+                txtStuAddress.Clear();
             }
             
         }
@@ -90,7 +96,13 @@ namespace PRG281_Project_Group11
         {
             string Num = txtNum.Text;
             StudentDataH.DeleteStudent(Num);
-            
+            edtName.Clear();
+            edtSurname.Clear();
+            cbxGenderEdt.ResetText();
+            edtPhone.Clear();
+            edtAddress.Clear();
+            txtNum.Clear();
+
         }
         private void btnUpdateStudent_Click(object sender, EventArgs e)
         {
@@ -103,6 +115,13 @@ namespace PRG281_Project_Group11
             string StudentAddress = edtAddress.Text;
 
             StudentDataH.UpdateStudent(Num, StudentName, StudentSurname, StudentDOB, StudentGender, StudentPhone, StudentAddress);
+
+            txtNum.Clear();
+            edtName.Clear();
+            edtSurname.Clear();
+            cbxGenderEdt.ResetText();
+            edtPhone.Clear();
+            edtAddress.Clear();
         }
 
         private void btnViewStudents_Click(object sender, EventArgs e)
@@ -110,24 +129,7 @@ namespace PRG281_Project_Group11
             dtStudents.DataSource = StudentDataH.ViewAllStudents();
         }
 
-        private void btnAddPhoto_Click(object sender, EventArgs e)
-        {
-            string image;
-            try
-            {
-                OpenFileDialog imageUpload = new OpenFileDialog();
-                imageUpload.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-                if (imageUpload.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    image = imageUpload.FileName;
-                    pbxPhoto.ImageLocation = image;
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("error occurred");
-            }
-        }
+        
 
         private void btnModuleFind_Click(object sender, EventArgs e)
         {
@@ -372,6 +374,32 @@ namespace PRG281_Project_Group11
             }
             txtStudentModule.Clear();
             txtModuleAdd.Clear();
+        }
+
+        private void btnAddPhoto_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddPhoto_Click(object sender, EventArgs e)
+        {
+          
+                string image;
+                try
+                {
+                    OpenFileDialog imageUpload = new OpenFileDialog();
+                    imageUpload.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+                    if (imageUpload.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        image = imageUpload.FileName;
+                        pbxPhoto.ImageLocation = image;
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("error occurred");
+                }
+            
         }
     }
 }

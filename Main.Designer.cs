@@ -48,10 +48,8 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btnAddPhoto = new System.Windows.Forms.Button();
             this.cbxStuGender = new System.Windows.Forms.ComboBox();
             this.dtpStuDOB = new System.Windows.Forms.DateTimePicker();
-            this.pbxPhoto = new System.Windows.Forms.PictureBox();
             this.txtStuPhone = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtStuAddress = new System.Windows.Forms.TextBox();
@@ -66,6 +64,12 @@
             this.btnViewStudents = new System.Windows.Forms.Button();
             this.dtStudents = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.btnAddModuleStud = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtModuleStuAdd = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtStudentAdd = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnModuleFind = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -94,23 +98,19 @@
             this.txtModuleAdd = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.btnAddForStudent = new System.Windows.Forms.Button();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.btnAddModuleStud = new System.Windows.Forms.Button();
-            this.label24 = new System.Windows.Forms.Label();
-            this.txtModuleStuAdd = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.txtStudentAdd = new System.Windows.Forms.TextBox();
             this.btnExit = new System.Windows.Forms.Button();
+            this.pbxPhoto = new System.Windows.Forms.PictureBox();
+            this.btnAddPhoto = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtStudents)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtModules)).BeginInit();
-            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -328,13 +328,6 @@
             this.groupBox5.Text = "Add a student";
             this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
-            // btnAddPhoto
-            // 
-            this.btnAddPhoto.Location = new System.Drawing.Point(0, 0);
-            this.btnAddPhoto.Name = "btnAddPhoto";
-            this.btnAddPhoto.Size = new System.Drawing.Size(75, 23);
-            this.btnAddPhoto.TabIndex = 0;
-            // 
             // cbxStuGender
             // 
             this.cbxStuGender.FormattingEnabled = true;
@@ -354,14 +347,6 @@
             this.dtpStuDOB.Size = new System.Drawing.Size(100, 20);
             this.dtpStuDOB.TabIndex = 15;
             this.dtpStuDOB.Value = new System.DateTime(2010, 12, 31, 0, 0, 0, 0);
-            // 
-            // pbxPhoto
-            // 
-            this.pbxPhoto.Location = new System.Drawing.Point(100, 23);
-            this.pbxPhoto.Name = "pbxPhoto";
-            this.pbxPhoto.Size = new System.Drawing.Size(100, 50);
-            this.pbxPhoto.TabIndex = 14;
-            this.pbxPhoto.TabStop = false;
             // 
             // txtStuPhone
             // 
@@ -491,6 +476,63 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Modules";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.btnAddModuleStud);
+            this.groupBox8.Controls.Add(this.label24);
+            this.groupBox8.Controls.Add(this.txtModuleStuAdd);
+            this.groupBox8.Controls.Add(this.label25);
+            this.groupBox8.Controls.Add(this.txtStudentAdd);
+            this.groupBox8.Location = new System.Drawing.Point(28, 233);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(538, 100);
+            this.groupBox8.TabIndex = 6;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Add new module to a student";
+            // 
+            // btnAddModuleStud
+            // 
+            this.btnAddModuleStud.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddModuleStud.Location = new System.Drawing.Point(276, 23);
+            this.btnAddModuleStud.Name = "btnAddModuleStud";
+            this.btnAddModuleStud.Size = new System.Drawing.Size(75, 53);
+            this.btnAddModuleStud.TabIndex = 4;
+            this.btnAddModuleStud.Text = "Add Module";
+            this.btnAddModuleStud.UseVisualStyleBackColor = true;
+            this.btnAddModuleStud.Click += new System.EventHandler(this.btnAddModuleStud_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(20, 61);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(70, 13);
+            this.label24.TabIndex = 3;
+            this.label24.Text = "Module Code";
+            // 
+            // txtModuleStuAdd
+            // 
+            this.txtModuleStuAdd.Location = new System.Drawing.Point(139, 56);
+            this.txtModuleStuAdd.Name = "txtModuleStuAdd";
+            this.txtModuleStuAdd.Size = new System.Drawing.Size(100, 20);
+            this.txtModuleStuAdd.TabIndex = 2;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(20, 28);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(84, 13);
+            this.label25.TabIndex = 1;
+            this.label25.Text = "Student Number";
+            // 
+            // txtStudentAdd
+            // 
+            this.txtStudentAdd.Location = new System.Drawing.Point(139, 23);
+            this.txtStudentAdd.Name = "txtStudentAdd";
+            this.txtStudentAdd.Size = new System.Drawing.Size(100, 20);
+            this.txtStudentAdd.TabIndex = 0;
             // 
             // groupBox4
             // 
@@ -750,63 +792,6 @@
             this.btnAddForStudent.Size = new System.Drawing.Size(75, 23);
             this.btnAddForStudent.TabIndex = 0;
             // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.btnAddModuleStud);
-            this.groupBox8.Controls.Add(this.label24);
-            this.groupBox8.Controls.Add(this.txtModuleStuAdd);
-            this.groupBox8.Controls.Add(this.label25);
-            this.groupBox8.Controls.Add(this.txtStudentAdd);
-            this.groupBox8.Location = new System.Drawing.Point(28, 233);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(538, 100);
-            this.groupBox8.TabIndex = 6;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Add new module to a student";
-            // 
-            // btnAddModuleStud
-            // 
-            this.btnAddModuleStud.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddModuleStud.Location = new System.Drawing.Point(276, 23);
-            this.btnAddModuleStud.Name = "btnAddModuleStud";
-            this.btnAddModuleStud.Size = new System.Drawing.Size(75, 53);
-            this.btnAddModuleStud.TabIndex = 4;
-            this.btnAddModuleStud.Text = "Add Module";
-            this.btnAddModuleStud.UseVisualStyleBackColor = true;
-            this.btnAddModuleStud.Click += new System.EventHandler(this.btnAddModuleStud_Click);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(20, 61);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(70, 13);
-            this.label24.TabIndex = 3;
-            this.label24.Text = "Module Code";
-            // 
-            // txtModuleStuAdd
-            // 
-            this.txtModuleStuAdd.Location = new System.Drawing.Point(139, 56);
-            this.txtModuleStuAdd.Name = "txtModuleStuAdd";
-            this.txtModuleStuAdd.Size = new System.Drawing.Size(100, 20);
-            this.txtModuleStuAdd.TabIndex = 2;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(20, 28);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(84, 13);
-            this.label25.TabIndex = 1;
-            this.label25.Text = "Student Number";
-            // 
-            // txtStudentAdd
-            // 
-            this.txtStudentAdd.Location = new System.Drawing.Point(139, 23);
-            this.txtStudentAdd.Name = "txtStudentAdd";
-            this.txtStudentAdd.Size = new System.Drawing.Size(100, 20);
-            this.txtStudentAdd.TabIndex = 0;
-            // 
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(31, 26);
@@ -815,6 +800,26 @@
             this.btnExit.TabIndex = 0;
             this.btnExit.Text = "EXIT";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
+            // 
+            // pbxPhoto
+            // 
+            this.pbxPhoto.Image = global::PRG281_Project_Group11.Properties.Resources.photomode_21102022_191249;
+            this.pbxPhoto.Location = new System.Drawing.Point(100, 23);
+            this.pbxPhoto.Name = "pbxPhoto";
+            this.pbxPhoto.Size = new System.Drawing.Size(100, 50);
+            this.pbxPhoto.TabIndex = 14;
+            this.pbxPhoto.TabStop = false;
+            // 
+            // btnAddPhoto
+            // 
+            this.btnAddPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPhoto.Location = new System.Drawing.Point(10, 26);
+            this.btnAddPhoto.Name = "btnAddPhoto";
+            this.btnAddPhoto.Size = new System.Drawing.Size(75, 23);
+            this.btnAddPhoto.TabIndex = 17;
+            this.btnAddPhoto.Text = "Add Photo";
+            this.btnAddPhoto.UseVisualStyleBackColor = true;
+            this.btnAddPhoto.Click += new System.EventHandler(this.btnAddPhoto_Click);
             // 
             // Main
             // 
@@ -832,16 +837,16 @@
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtStudents)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtModules)).EndInit();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -914,7 +919,6 @@
         private System.Windows.Forms.TextBox txtModuleAdd;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtStudentModule;
-        private System.Windows.Forms.Button btnAddPhoto;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button btnAddModuleStud;
         private System.Windows.Forms.Label label24;
@@ -922,6 +926,7 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox txtStudentAdd;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnAddPhoto;
     }
 }
 
