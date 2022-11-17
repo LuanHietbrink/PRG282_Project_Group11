@@ -155,6 +155,7 @@
             // 
             // cbxGenderEdt
             // 
+            this.cbxGenderEdt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxGenderEdt.FormattingEnabled = true;
             this.cbxGenderEdt.Items.AddRange(new object[] {
             "Male",
@@ -330,6 +331,7 @@
             // 
             // cbxStuGender
             // 
+            this.cbxStuGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxStuGender.FormattingEnabled = true;
             this.cbxStuGender.Items.AddRange(new object[] {
             "Male",
