@@ -14,6 +14,7 @@ namespace PRG281_Project_Group11
     public partial class Form1 : Form
     {
         ModuleDataHandler moduleDataHandler = new ModuleDataHandler();
+        DataHandler StudentDataH = new DataHandler();
         public static SqlConnection connection;
         SqlCommand command;
         SqlDataReader reader;
@@ -63,8 +64,24 @@ namespace PRG281_Project_Group11
             string StudentPhone = txtStuPhone.Text;
             string StudentAddress = txtStuAddress.Text;
 
-            DataHandler DataH = new DataHandler();
-            DataH.AddStudent(StudentName, StudentSurname, StudentImage, StudentDOB, StudentGender, StudentPhone, StudentAddress);
+            
+            StudentDataH.AddStudent(StudentName, StudentSurname, StudentImage, StudentDOB, StudentGender, StudentPhone, StudentAddress);
+        }
+
+        private void btnFindStudent_Click(object sender, EventArgs e)
+        {
+            string Num = txtNum.Text;
+            Student student = new Student();
+
+            student = StudentDataH.FindStudent(Num,student);
+            edtName.Text = student.Name;
+            edtSurname.Text = student.Surname;
+            dtpDateEdt.Text = student.Dob;
+            cbxGenderEdt.Text = student.Gender;
+            edtPhone.Text = student.Phone;
+            edtAddress.Text = student.Address;
+
+
         }
     }
 }

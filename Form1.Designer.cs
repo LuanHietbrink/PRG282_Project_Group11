@@ -30,21 +30,21 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.cbxGenderEdt = new System.Windows.Forms.ComboBox();
+            this.btnFindStudent = new System.Windows.Forms.Button();
+            this.dtpDateEdt = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.edtPhone = new System.Windows.Forms.TextBox();
+            this.txtNum = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.edtAddress = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.edtName = new System.Windows.Forms.TextBox();
+            this.edtSurname = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -122,21 +122,21 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.comboBox2);
-            this.groupBox6.Controls.Add(this.button2);
-            this.groupBox6.Controls.Add(this.dateTimePicker2);
+            this.groupBox6.Controls.Add(this.cbxGenderEdt);
+            this.groupBox6.Controls.Add(this.btnFindStudent);
+            this.groupBox6.Controls.Add(this.dtpDateEdt);
             this.groupBox6.Controls.Add(this.label12);
-            this.groupBox6.Controls.Add(this.textBox2);
-            this.groupBox6.Controls.Add(this.textBox4);
+            this.groupBox6.Controls.Add(this.edtPhone);
+            this.groupBox6.Controls.Add(this.txtNum);
             this.groupBox6.Controls.Add(this.label13);
             this.groupBox6.Controls.Add(this.button3);
-            this.groupBox6.Controls.Add(this.textBox5);
+            this.groupBox6.Controls.Add(this.edtAddress);
             this.groupBox6.Controls.Add(this.button4);
             this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Controls.Add(this.label21);
             this.groupBox6.Controls.Add(this.label15);
-            this.groupBox6.Controls.Add(this.textBox7);
-            this.groupBox6.Controls.Add(this.textBox6);
+            this.groupBox6.Controls.Add(this.edtName);
+            this.groupBox6.Controls.Add(this.edtSurname);
             this.groupBox6.Controls.Add(this.label20);
             this.groupBox6.Controls.Add(this.label19);
             this.groupBox6.Location = new System.Drawing.Point(284, 19);
@@ -146,34 +146,35 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Edit/Delete a student";
             // 
-            // comboBox2
+            // cbxGenderEdt
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbxGenderEdt.FormattingEnabled = true;
+            this.cbxGenderEdt.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.comboBox2.Location = new System.Drawing.Point(106, 151);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(100, 21);
-            this.comboBox2.TabIndex = 28;
+            this.cbxGenderEdt.Location = new System.Drawing.Point(106, 151);
+            this.cbxGenderEdt.Name = "cbxGenderEdt";
+            this.cbxGenderEdt.Size = new System.Drawing.Size(100, 21);
+            this.cbxGenderEdt.TabIndex = 28;
             // 
-            // button2
+            // btnFindStudent
             // 
-            this.button2.Location = new System.Drawing.Point(221, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Find";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnFindStudent.Location = new System.Drawing.Point(221, 21);
+            this.btnFindStudent.Name = "btnFindStudent";
+            this.btnFindStudent.Size = new System.Drawing.Size(75, 23);
+            this.btnFindStudent.TabIndex = 18;
+            this.btnFindStudent.Text = "Find";
+            this.btnFindStudent.UseVisualStyleBackColor = true;
+            this.btnFindStudent.Click += new System.EventHandler(this.btnFindStudent_Click);
             // 
-            // dateTimePicker2
+            // dtpDateEdt
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(106, 118);
-            this.dateTimePicker2.MaxDate = new System.DateTime(2010, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePicker2.TabIndex = 27;
-            this.dateTimePicker2.Value = new System.DateTime(2010, 12, 31, 0, 0, 0, 0);
+            this.dtpDateEdt.Location = new System.Drawing.Point(106, 118);
+            this.dtpDateEdt.MaxDate = new System.DateTime(2010, 12, 31, 0, 0, 0, 0);
+            this.dtpDateEdt.Name = "dtpDateEdt";
+            this.dtpDateEdt.Size = new System.Drawing.Size(100, 20);
+            this.dtpDateEdt.TabIndex = 27;
+            this.dtpDateEdt.Value = new System.DateTime(2010, 12, 31, 0, 0, 0, 0);
             // 
             // label12
             // 
@@ -184,19 +185,19 @@
             this.label12.TabIndex = 17;
             this.label12.Text = "Student Number";
             // 
-            // textBox2
+            // edtPhone
             // 
-            this.textBox2.Location = new System.Drawing.Point(106, 191);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 26;
+            this.edtPhone.Location = new System.Drawing.Point(106, 191);
+            this.edtPhone.Name = "edtPhone";
+            this.edtPhone.Size = new System.Drawing.Size(100, 20);
+            this.edtPhone.TabIndex = 26;
             // 
-            // textBox4
+            // txtNum
             // 
-            this.textBox4.Location = new System.Drawing.Point(106, 23);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 16;
+            this.txtNum.Location = new System.Drawing.Point(106, 23);
+            this.txtNum.Name = "txtNum";
+            this.txtNum.Size = new System.Drawing.Size(100, 20);
+            this.txtNum.TabIndex = 16;
             // 
             // label13
             // 
@@ -217,12 +218,12 @@
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // edtAddress
             // 
-            this.textBox5.Location = new System.Drawing.Point(106, 229);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 24;
+            this.edtAddress.Location = new System.Drawing.Point(106, 229);
+            this.edtAddress.Name = "edtAddress";
+            this.edtAddress.Size = new System.Drawing.Size(100, 20);
+            this.edtAddress.TabIndex = 24;
             // 
             // button4
             // 
@@ -261,19 +262,19 @@
             this.label15.TabIndex = 22;
             this.label15.Text = "Gender";
             // 
-            // textBox7
+            // edtName
             // 
-            this.textBox7.Location = new System.Drawing.Point(106, 53);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 17;
+            this.edtName.Location = new System.Drawing.Point(106, 53);
+            this.edtName.Name = "edtName";
+            this.edtName.Size = new System.Drawing.Size(100, 20);
+            this.edtName.TabIndex = 17;
             // 
-            // textBox6
+            // edtSurname
             // 
-            this.textBox6.Location = new System.Drawing.Point(106, 84);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 21;
+            this.edtSurname.Location = new System.Drawing.Point(106, 84);
+            this.edtSurname.Name = "edtSurname";
+            this.edtSurname.Size = new System.Drawing.Size(100, 20);
+            this.edtSurname.TabIndex = 21;
             // 
             // label20
             // 
@@ -805,9 +806,9 @@
         private System.Windows.Forms.TextBox txtModNameFind;
         private System.Windows.Forms.Button btnViewModules;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnFindStudent;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtNum;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -823,16 +824,16 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtStuName;
         private System.Windows.Forms.Button btnViewStudents;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox cbxGenderEdt;
+        private System.Windows.Forms.DateTimePicker dtpDateEdt;
+        private System.Windows.Forms.TextBox edtPhone;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox edtAddress;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox edtName;
+        private System.Windows.Forms.TextBox edtSurname;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox cbxStuGender;
