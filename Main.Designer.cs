@@ -1,6 +1,6 @@
 ﻿namespace PRG281_Project_Group11
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -37,9 +37,9 @@
             this.edtPhone = new System.Windows.Forms.TextBox();
             this.txtNum = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnDeleteStudent = new System.Windows.Forms.Button();
             this.edtAddress = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnUpdateStudent = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -88,6 +88,7 @@
             this.txtModName = new System.Windows.Forms.TextBox();
             this.dtModules = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnAddPhoto = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.txtStudentModule = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -130,9 +131,9 @@
             this.groupBox6.Controls.Add(this.edtPhone);
             this.groupBox6.Controls.Add(this.txtNum);
             this.groupBox6.Controls.Add(this.label13);
-            this.groupBox6.Controls.Add(this.button3);
+            this.groupBox6.Controls.Add(this.btnDeleteStudent);
             this.groupBox6.Controls.Add(this.edtAddress);
-            this.groupBox6.Controls.Add(this.button4);
+            this.groupBox6.Controls.Add(this.btnUpdateStudent);
             this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Controls.Add(this.label21);
             this.groupBox6.Controls.Add(this.label15);
@@ -209,15 +210,16 @@
             this.label13.TabIndex = 25;
             this.label13.Text = "Address";
             // 
-            // button3
+            // btnDeleteStudent
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(211, 266);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(85, 28);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDeleteStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteStudent.Location = new System.Drawing.Point(211, 266);
+            this.btnDeleteStudent.Name = "btnDeleteStudent";
+            this.btnDeleteStudent.Size = new System.Drawing.Size(85, 28);
+            this.btnDeleteStudent.TabIndex = 15;
+            this.btnDeleteStudent.Text = "Delete";
+            this.btnDeleteStudent.UseVisualStyleBackColor = true;
+            this.btnDeleteStudent.Click += new System.EventHandler(this.btnDeleteStudent_Click);
             // 
             // edtAddress
             // 
@@ -226,15 +228,16 @@
             this.edtAddress.Size = new System.Drawing.Size(100, 20);
             this.edtAddress.TabIndex = 24;
             // 
-            // button4
+            // btnUpdateStudent
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(19, 266);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(85, 28);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Update";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnUpdateStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateStudent.Location = new System.Drawing.Point(19, 266);
+            this.btnUpdateStudent.Name = "btnUpdateStudent";
+            this.btnUpdateStudent.Size = new System.Drawing.Size(85, 28);
+            this.btnUpdateStudent.TabIndex = 14;
+            this.btnUpdateStudent.Text = "Update";
+            this.btnUpdateStudent.UseVisualStyleBackColor = true;
+            this.btnUpdateStudent.Click += new System.EventHandler(this.btnUpdateStudent_Click);
             // 
             // label14
             // 
@@ -297,6 +300,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.btnAddPhoto);
             this.groupBox5.Controls.Add(this.cbxStuGender);
             this.groupBox5.Controls.Add(this.dtpStuDOB);
             this.groupBox5.Controls.Add(this.pbxPhoto);
@@ -449,6 +453,7 @@
             this.btnViewStudents.TabIndex = 4;
             this.btnViewStudents.Text = "View all";
             this.btnViewStudents.UseVisualStyleBackColor = true;
+            this.btnViewStudents.Click += new System.EventHandler(this.btnViewStudents_Click);
             // 
             // dtStudents
             // 
@@ -698,74 +703,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "MAIN PAGE";
             // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(31, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(89, 41);
-            this.btnExit.TabIndex = 3;
-            this.btnExit.Text = "EXIT";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // txtStudentModule
-            // 
-            this.txtStudentModule.Location = new System.Drawing.Point(139, 23);
-            this.txtStudentModule.Name = "txtStudentModule";
-            this.txtStudentModule.Size = new System.Drawing.Size(100, 20);
-            this.txtStudentModule.TabIndex = 0;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(20, 28);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(84, 13);
-            this.label22.TabIndex = 1;
-            this.label22.Text = "Student Number";
-            // 
-            // txtModuleAdd
-            // 
-            this.txtModuleAdd.Location = new System.Drawing.Point(139, 56);
-            this.txtModuleAdd.Name = "txtModuleAdd";
-            this.txtModuleAdd.Size = new System.Drawing.Size(100, 20);
-            this.txtModuleAdd.TabIndex = 2;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(20, 61);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(70, 13);
-            this.label23.TabIndex = 3;
-            this.label23.Text = "Module Code";
-            // 
-            // btnAddForStudent
-            // 
-            this.btnAddForStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddForStudent.Location = new System.Drawing.Point(276, 23);
-            this.btnAddForStudent.Name = "btnAddForStudent";
-            this.btnAddForStudent.Size = new System.Drawing.Size(75, 53);
-            this.btnAddForStudent.TabIndex = 4;
-            this.btnAddForStudent.Text = "Add Module";
-            this.btnAddForStudent.UseVisualStyleBackColor = true;
-            this.btnAddForStudent.Click += new System.EventHandler(this.btnAddForStudent_Click);
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.btnAddForStudent);
-            this.groupBox7.Controls.Add(this.label23);
-            this.groupBox7.Controls.Add(this.txtModuleAdd);
-            this.groupBox7.Controls.Add(this.label22);
-            this.groupBox7.Controls.Add(this.txtStudentModule);
-            this.groupBox7.Location = new System.Drawing.Point(28, 229);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(538, 100);
-            this.groupBox7.TabIndex = 5;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Add new module to a student";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -829,8 +766,8 @@
         private System.Windows.Forms.Button btnFindStudent;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtNum;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnDeleteStudent;
+        private System.Windows.Forms.Button btnUpdateStudent;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox txtStuPhone;
         private System.Windows.Forms.Label label16;
@@ -866,6 +803,7 @@
         private System.Windows.Forms.TextBox txtModuleAdd;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtStudentModule;
+        private System.Windows.Forms.Button btnAddPhoto;
     }
 }
 
