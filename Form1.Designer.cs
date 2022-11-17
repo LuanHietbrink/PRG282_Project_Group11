@@ -37,9 +37,9 @@
             this.edtPhone = new System.Windows.Forms.TextBox();
             this.txtNum = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnDeleteStudent = new System.Windows.Forms.Button();
             this.edtAddress = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnUpdateStudent = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -129,9 +129,9 @@
             this.groupBox6.Controls.Add(this.edtPhone);
             this.groupBox6.Controls.Add(this.txtNum);
             this.groupBox6.Controls.Add(this.label13);
-            this.groupBox6.Controls.Add(this.button3);
+            this.groupBox6.Controls.Add(this.btnDeleteStudent);
             this.groupBox6.Controls.Add(this.edtAddress);
-            this.groupBox6.Controls.Add(this.button4);
+            this.groupBox6.Controls.Add(this.btnUpdateStudent);
             this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Controls.Add(this.label21);
             this.groupBox6.Controls.Add(this.label15);
@@ -208,15 +208,16 @@
             this.label13.TabIndex = 25;
             this.label13.Text = "Address";
             // 
-            // button3
+            // btnDeleteStudent
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(211, 266);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(85, 28);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDeleteStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteStudent.Location = new System.Drawing.Point(211, 266);
+            this.btnDeleteStudent.Name = "btnDeleteStudent";
+            this.btnDeleteStudent.Size = new System.Drawing.Size(85, 28);
+            this.btnDeleteStudent.TabIndex = 15;
+            this.btnDeleteStudent.Text = "Delete";
+            this.btnDeleteStudent.UseVisualStyleBackColor = true;
+            this.btnDeleteStudent.Click += new System.EventHandler(this.btnDeleteStudent_Click);
             // 
             // edtAddress
             // 
@@ -225,15 +226,16 @@
             this.edtAddress.Size = new System.Drawing.Size(100, 20);
             this.edtAddress.TabIndex = 24;
             // 
-            // button4
+            // btnUpdateStudent
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(19, 266);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(85, 28);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Update";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnUpdateStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateStudent.Location = new System.Drawing.Point(19, 266);
+            this.btnUpdateStudent.Name = "btnUpdateStudent";
+            this.btnUpdateStudent.Size = new System.Drawing.Size(85, 28);
+            this.btnUpdateStudent.TabIndex = 14;
+            this.btnUpdateStudent.Text = "Update";
+            this.btnUpdateStudent.UseVisualStyleBackColor = true;
+            this.btnUpdateStudent.Click += new System.EventHandler(this.btnUpdateStudent_Click);
             // 
             // label14
             // 
@@ -448,6 +450,7 @@
             this.btnViewStudents.TabIndex = 4;
             this.btnViewStudents.Text = "View all";
             this.btnViewStudents.UseVisualStyleBackColor = true;
+            this.btnViewStudents.Click += new System.EventHandler(this.btnViewStudents_Click);
             // 
             // dtStudents
             // 
@@ -809,8 +812,8 @@
         private System.Windows.Forms.Button btnFindStudent;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtNum;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnDeleteStudent;
+        private System.Windows.Forms.Button btnUpdateStudent;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox txtStuPhone;
         private System.Windows.Forms.Label label16;

@@ -82,6 +82,30 @@ namespace PRG281_Project_Group11
             edtAddress.Text = student.Address;
 
 
+        }       
+
+        private void btnDeleteStudent_Click(object sender, EventArgs e)
+        {
+            string Num = txtNum.Text;
+            StudentDataH.DeleteStudent(Num);
+            
+        }
+        private void btnUpdateStudent_Click(object sender, EventArgs e)
+        {
+            string Num = txtNum.Text;
+            string StudentName = edtName.Text;
+            string StudentSurname = edtSurname.Text;
+            string StudentDOB = dtpDateEdt.Value.ToString();
+            string StudentGender = cbxGenderEdt.Text;
+            string StudentPhone = edtPhone.Text;
+            string StudentAddress = edtAddress.Text;
+
+            StudentDataH.UpdateStudent(Num, StudentName, StudentSurname, StudentDOB, StudentGender, StudentPhone, StudentAddress);
+        }
+
+        private void btnViewStudents_Click(object sender, EventArgs e)
+        {
+            dtStudents.DataSource = StudentDataH.ViewAllStudents();
         }
     }
 }

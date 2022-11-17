@@ -60,7 +60,65 @@ namespace PRG281_Project_Group11
             }
             con.Close();
             return std;
-
         }
+
+        public void DeleteStudent(string Num)
+        {
+            string query = @"DELETE FROM StudentDetails WHERE StudentNumber= '" + Num + "'";
+
+            SqlConnection con = new SqlConnection(connect);
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            con.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Student record deleted successfully");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Something went wrong" + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void UpdateStudent(string Num, string stName, string stSurname, string stDOB, string stGender, string stPhone, string stAddress)
+        {
+            string query = @"UPDATE StudentDetails SET StudentName='" + stName + "',StudentSurname='" + stSurname + "',StudentDOB='" + stDOB + "',StudentGender='" + stGender + "',StudentPhone='" + stPhone + "',StudentAddress='" + stAddress + "' WHERE StudentNumber='"+ Num +"'";
+
+            SqlConnection con = new SqlConnection(connect);
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            con.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Student record updated successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Something went wrong" + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public DataTable ViewAllStudents()
+        {
+            string query = @"SELECT * FROM StudentDetails";
+
+            SqlConnection con = new SqlConnection(connect);
+            SqlDataAdapter dap = new SqlDataAdapter(query, con);
+            DataTable dtbl = new DataTable();
+
+            dap.Fill(dtbl);
+            return dtbl;
+        }
+
     }
 }
