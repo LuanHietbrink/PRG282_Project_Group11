@@ -44,7 +44,7 @@ namespace PRG281_Project_Group11
 
             if (verif == true)
             {
-                new Form1().Show();
+                new Main().Show();
                 this.Hide();
             }
             else if (verif == false)

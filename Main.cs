@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace PRG281_Project_Group11
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
         ModuleDataHandler moduleDataHandler = new ModuleDataHandler();
         DataHandler StudentDataH = new DataHandler();
         public static SqlConnection connection;
         SqlCommand command;
         SqlDataReader reader;
-        public Form1()
+        public Main()
         {
             InitializeComponent();
             connection = new SqlConnection(@"Server=DESKTOP-6OVGGB7\SQLEXPRESS; Initial Catalog =Students; Integrated Security =SSPI");
