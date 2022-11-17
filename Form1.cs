@@ -47,5 +47,24 @@ namespace PRG281_Project_Group11
                 txtModLink.Clear();
             }
         }
+
+        private void btnAddStudent_Click(object sender, EventArgs e)
+        {
+            string StudentName = txtStuName.Text;
+            string StudentSurname = txtStuSurname.Text;
+
+            Image img = pbxPhoto.Image;
+            byte[] StudentImage;
+            ImageConverter conv = new ImageConverter();
+            StudentImage = (byte[])conv.ConvertTo(img, typeof(byte[]));
+
+            string StudentDOB = dtpStuDOB.Value.ToString();
+            string StudentGender = cbxStuGender.Text;
+            string StudentPhone = txtStuPhone.Text;
+            string StudentAddress = txtStuAddress.Text;
+
+            DataHandler DataH = new DataHandler();
+            DataH.AddStudent(StudentName, StudentSurname, StudentImage, StudentDOB, StudentGender, StudentPhone, StudentAddress);
+        }
     }
 }
