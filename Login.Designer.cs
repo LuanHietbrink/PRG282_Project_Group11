@@ -34,13 +34,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnCreateNewUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(277, 325);
+            this.btnLogin.Location = new System.Drawing.Point(354, 318);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(147, 47);
+            this.btnLogin.Size = new System.Drawing.Size(105, 47);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -88,11 +89,22 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Enter password";
             // 
+            // btnCreateNewUser
+            // 
+            this.btnCreateNewUser.Location = new System.Drawing.Point(243, 318);
+            this.btnCreateNewUser.Name = "btnCreateNewUser";
+            this.btnCreateNewUser.Size = new System.Drawing.Size(105, 47);
+            this.btnCreateNewUser.TabIndex = 6;
+            this.btnCreateNewUser.Text = "New User";
+            this.btnCreateNewUser.UseVisualStyleBackColor = true;
+            this.btnCreateNewUser.Click += new System.EventHandler(this.btnCreateNewUser_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 511);
+            this.Controls.Add(this.btnCreateNewUser);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -114,5 +126,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnCreateNewUser;
     }
 }
