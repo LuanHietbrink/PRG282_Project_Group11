@@ -59,15 +59,5 @@ namespace PRG281_Project_Group11.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap photomode_21102022_191249 {
-            get {
-                object obj = ResourceManager.GetObject("photomode_21102022_191249", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

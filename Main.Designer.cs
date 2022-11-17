@@ -48,6 +48,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnAddPhoto = new System.Windows.Forms.Button();
             this.cbxStuGender = new System.Windows.Forms.ComboBox();
             this.dtpStuDOB = new System.Windows.Forms.DateTimePicker();
             this.pbxPhoto = new System.Windows.Forms.PictureBox();
@@ -88,14 +89,18 @@
             this.txtModName = new System.Windows.Forms.TextBox();
             this.dtModules = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAddPhoto = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.txtStudentModule = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.txtModuleAdd = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.btnAddForStudent = new System.Windows.Forms.Button();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.btnAddModuleStud = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtModuleStuAdd = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtStudentAdd = new System.Windows.Forms.TextBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -105,7 +110,7 @@
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtModules)).BeginInit();
-            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -323,6 +328,13 @@
             this.groupBox5.Text = "Add a student";
             this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
+            // btnAddPhoto
+            // 
+            this.btnAddPhoto.Location = new System.Drawing.Point(0, 0);
+            this.btnAddPhoto.Name = "btnAddPhoto";
+            this.btnAddPhoto.Size = new System.Drawing.Size(75, 23);
+            this.btnAddPhoto.TabIndex = 0;
+            // 
             // cbxStuGender
             // 
             this.cbxStuGender.FormattingEnabled = true;
@@ -467,7 +479,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox2.Controls.Add(this.groupBox7);
+            this.groupBox2.Controls.Add(this.groupBox8);
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.btnViewModules);
             this.groupBox2.Controls.Add(this.groupBox3);
@@ -703,7 +715,108 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "MAIN PAGE";
             // 
-            // Form1
+            // txtStudentModule
+            // 
+            this.txtStudentModule.Location = new System.Drawing.Point(0, 0);
+            this.txtStudentModule.Name = "txtStudentModule";
+            this.txtStudentModule.Size = new System.Drawing.Size(100, 20);
+            this.txtStudentModule.TabIndex = 0;
+            // 
+            // label22
+            // 
+            this.label22.Location = new System.Drawing.Point(0, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(100, 23);
+            this.label22.TabIndex = 0;
+            // 
+            // txtModuleAdd
+            // 
+            this.txtModuleAdd.Location = new System.Drawing.Point(0, 0);
+            this.txtModuleAdd.Name = "txtModuleAdd";
+            this.txtModuleAdd.Size = new System.Drawing.Size(100, 20);
+            this.txtModuleAdd.TabIndex = 0;
+            // 
+            // label23
+            // 
+            this.label23.Location = new System.Drawing.Point(0, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(100, 23);
+            this.label23.TabIndex = 0;
+            // 
+            // btnAddForStudent
+            // 
+            this.btnAddForStudent.Location = new System.Drawing.Point(0, 0);
+            this.btnAddForStudent.Name = "btnAddForStudent";
+            this.btnAddForStudent.Size = new System.Drawing.Size(75, 23);
+            this.btnAddForStudent.TabIndex = 0;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.btnAddModuleStud);
+            this.groupBox8.Controls.Add(this.label24);
+            this.groupBox8.Controls.Add(this.txtModuleStuAdd);
+            this.groupBox8.Controls.Add(this.label25);
+            this.groupBox8.Controls.Add(this.txtStudentAdd);
+            this.groupBox8.Location = new System.Drawing.Point(28, 233);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(538, 100);
+            this.groupBox8.TabIndex = 6;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Add new module to a student";
+            // 
+            // btnAddModuleStud
+            // 
+            this.btnAddModuleStud.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddModuleStud.Location = new System.Drawing.Point(276, 23);
+            this.btnAddModuleStud.Name = "btnAddModuleStud";
+            this.btnAddModuleStud.Size = new System.Drawing.Size(75, 53);
+            this.btnAddModuleStud.TabIndex = 4;
+            this.btnAddModuleStud.Text = "Add Module";
+            this.btnAddModuleStud.UseVisualStyleBackColor = true;
+            this.btnAddModuleStud.Click += new System.EventHandler(this.btnAddModuleStud_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(20, 61);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(70, 13);
+            this.label24.TabIndex = 3;
+            this.label24.Text = "Module Code";
+            // 
+            // txtModuleStuAdd
+            // 
+            this.txtModuleStuAdd.Location = new System.Drawing.Point(139, 56);
+            this.txtModuleStuAdd.Name = "txtModuleStuAdd";
+            this.txtModuleStuAdd.Size = new System.Drawing.Size(100, 20);
+            this.txtModuleStuAdd.TabIndex = 2;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(20, 28);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(84, 13);
+            this.label25.TabIndex = 1;
+            this.label25.Text = "Student Number";
+            // 
+            // txtStudentAdd
+            // 
+            this.txtStudentAdd.Location = new System.Drawing.Point(139, 23);
+            this.txtStudentAdd.Name = "txtStudentAdd";
+            this.txtStudentAdd.Size = new System.Drawing.Size(100, 20);
+            this.txtStudentAdd.TabIndex = 0;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(31, 26);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(89, 39);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.Text = "EXIT";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
+            // 
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -712,7 +825,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
+            this.Name = "Main";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
@@ -727,8 +840,8 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtModules)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -796,14 +909,19 @@
         private System.Windows.Forms.ComboBox cbxStuGender;
         private System.Windows.Forms.DateTimePicker dtpStuDOB;
         private System.Windows.Forms.PictureBox pbxPhoto;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button btnAddForStudent;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox txtModuleAdd;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtStudentModule;
         private System.Windows.Forms.Button btnAddPhoto;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button btnAddModuleStud;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox txtModuleStuAdd;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox txtStudentAdd;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 

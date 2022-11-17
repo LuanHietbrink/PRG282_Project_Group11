@@ -240,36 +240,7 @@ namespace PRG281_Project_Group11
             }
         }
 
-        private void btnAddForStudent_Click(object sender, EventArgs e)
-        {
-            addStudentModule(int.Parse(txtStudentModule.Text), int.Parse(txtModuleAdd.Text));
-            try
-            {
-                connection.Open();
-                command = new SqlCommand($"select StudentNumber, ModuleDetails.ModuleCode, ModuleName, ModuleDescription from ModuleDetails Join StudentModules on ModuleDetails.ModuleCode = StudentModules.Modulecode where StudentNumber = {txtStudentModule.Text}", connection);
-
-                reader = command.ExecuteReader();
-
-                BindingSource source = new BindingSource();
-                source.DataSource = reader;
-
-                dtModules.DataSource = source;
-            }
-            catch (SqlException error)
-            {
-                MessageBox.Show(error.ToString());
-            }
-            finally
-            {
-                if (connection != null)
-                {
-                    connection.Close();
-                }
-
-            }
-            txtStudentModule.Clear();
-            txtModuleAdd.Clear();
-        }
+       
 
         public void addStudentModule(int student, int module)
         {
@@ -365,6 +336,42 @@ namespace PRG281_Project_Group11
                     reader.Close();
                 }
             }
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnAddModuleStud_Click(object sender, EventArgs e)
+        {
+            addStudentModule(int.Parse(txtStudentAdd.Text), int.Parse(txtModuleStuAdd.Text));
+            try
+            {
+                connection.Open();
+                command = new SqlCommand($"select StudentNumber, ModuleDetails.ModuleCode, ModuleName, ModuleDescription from ModuleDetails Join StudentModules on ModuleDetails.ModuleCode = StudentModules.Modulecode where StudentNumber = {txtStudentAdd.Text}", connection);
+
+                reader = command.ExecuteReader();
+
+                BindingSource source = new BindingSource();
+                source.DataSource = reader;
+
+                dtModules.DataSource = source;
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.ToString());
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+
+            }
+            txtStudentModule.Clear();
+            txtModuleAdd.Clear();
         }
     }
 }
