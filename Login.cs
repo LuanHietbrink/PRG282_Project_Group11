@@ -22,8 +22,6 @@ namespace PRG281_Project_Group11
         {
             string username, password;
 
-            username = txtUsername.Text;
-            password = txtPassword.Text;
         }
     }
 }
