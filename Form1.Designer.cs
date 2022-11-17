@@ -94,6 +94,7 @@
             this.txtModName = new System.Windows.Forms.TextBox();
             this.dtModules = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnAddPhoto = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -298,6 +299,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.btnAddPhoto);
             this.groupBox5.Controls.Add(this.cbxStuGender);
             this.groupBox5.Controls.Add(this.dtpStuDOB);
             this.groupBox5.Controls.Add(this.pbxPhoto);
@@ -750,6 +752,16 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "MAIN PAGE";
             // 
+            // btnAddPhoto
+            // 
+            this.btnAddPhoto.Location = new System.Drawing.Point(10, 26);
+            this.btnAddPhoto.Name = "btnAddPhoto";
+            this.btnAddPhoto.Size = new System.Drawing.Size(75, 23);
+            this.btnAddPhoto.TabIndex = 17;
+            this.btnAddPhoto.Text = "Add photo";
+            this.btnAddPhoto.UseVisualStyleBackColor = true;
+            this.btnAddPhoto.Click += new System.EventHandler(this.btnAddPhoto_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -848,6 +860,7 @@
         private System.Windows.Forms.TextBox txtModuleAdd;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtStudentModule;
+        private System.Windows.Forms.Button btnAddPhoto;
     }
 }
 

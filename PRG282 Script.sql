@@ -1,5 +1,6 @@
 Create database Students
 
+GO
 use Students 
 
 
@@ -14,7 +15,7 @@ Create Table StudentDetails
 (	StudentNumber int Primary key identity(1,1),
 	StudentName nvarchar(50) not null,
 	StudentSurname nvarchar(50) not null,
-	StudentImage image,
+	StudentImage nvarchar(50),
 	StudentDOB datetime not null,
 	StudentGender nvarchar(30) not null,
 	StudentPhone nvarchar(10) not null unique,

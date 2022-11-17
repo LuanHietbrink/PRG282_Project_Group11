@@ -13,7 +13,7 @@ namespace PRG281_Project_Group11
     {
         string connect = @"Data source= (local)\SQLEXPRESS; Initial Catalog= Students; Integrated Security=SSPI";
 
-        public void AddStudent(string stName, string stSurname, Byte[] stImage, string stDOB, string stGender, string stPhone, string stAddress)
+        public void AddStudent(string stName, string stSurname, string stImage, string stDOB, string stGender, string stPhone, string stAddress)
         {
             string query = @"INSERT INTO StudentDetails (StudentName,StudentSurname,StudentImage,StudentDOB,StudentGender,StudentPhone,StudentAddress) VALUES ('" + stName + "','" + stSurname + "','" + stImage + "','" + stDOB + "','" + stGender + "','" + stPhone + "','" + stAddress + "')";
 
@@ -64,7 +64,7 @@ namespace PRG281_Project_Group11
 
         public void DeleteStudent(string Num)
         {
-            string query = @"DELETE FROM StudentDetails WHERE StudentNumber= '" + Num + "'";
+            string query = @"DELETE FROM StudentModules WHERE StudentNumber= '" + Num + "'; DELETE FROM StudentDetails WHERE StudentNumber= '" + Num + "'";
 
             SqlConnection con = new SqlConnection(connect);
             SqlCommand cmd = new SqlCommand(query, con);

@@ -53,19 +53,21 @@ namespace PRG281_Project_Group11
         {
             string StudentName = txtStuName.Text;
             string StudentSurname = txtStuSurname.Text;
-
-            Image img = pbxPhoto.Image;
-            byte[] StudentImage;
-            ImageConverter conv = new ImageConverter();
-            StudentImage = (byte[])conv.ConvertTo(img, typeof(byte[]));
-
+            string StudentImage = pbxPhoto.Image.ToString();
             string StudentDOB = dtpStuDOB.Value.ToString();
             string StudentGender = cbxStuGender.Text;
             string StudentPhone = txtStuPhone.Text;
             string StudentAddress = txtStuAddress.Text;
 
+            if(StudentName == null || StudentSurname == null || StudentGender == null || StudentPhone == null || StudentAddress == null || StudentName == null || StudentName == null || StudentImage == null)
+            {
+                MessageBox.Show("Please make sure that all fields are filled out");
+            }
+            else
+            {
+                StudentDataH.AddStudent(StudentName, StudentSurname, StudentImage, StudentDOB, StudentGender, StudentPhone, StudentAddress);
+            }
             
-            StudentDataH.AddStudent(StudentName, StudentSurname, StudentImage, StudentDOB, StudentGender, StudentPhone, StudentAddress);
         }
 
         private void btnFindStudent_Click(object sender, EventArgs e)
@@ -106,6 +108,25 @@ namespace PRG281_Project_Group11
         private void btnViewStudents_Click(object sender, EventArgs e)
         {
             dtStudents.DataSource = StudentDataH.ViewAllStudents();
+        }
+
+        private void btnAddPhoto_Click(object sender, EventArgs e)
+        {
+            string image;
+            try
+            {
+                OpenFileDialog imageUpload = new OpenFileDialog();
+                imageUpload.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+                if (imageUpload.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    image = imageUpload.FileName;
+                    pbxPhoto.ImageLocation = image;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("error occurred");
+            }
         }
     }
 }
