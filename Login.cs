@@ -23,7 +23,7 @@ namespace PRG281_Project_Group11
 
             string Username;
             string Password;
-            string filePath = @"C:\Users\georg\OneDrive\Desktop\PRG282\PRG282_Project\login.txt";
+            string filePath = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "login.txt");
 
             Username = txtUsername.Text;
             Password = txtPassword.Text;
